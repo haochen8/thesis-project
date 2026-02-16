@@ -45,7 +45,12 @@ parser.add_argument('--weights_path', type=str,
 #parser.add_argument("--lmdb", action='store_true', default=False)
 args = parser.parse_args()
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+elif getattr(torch.backends, "mps", None) is not None and torch.backends.mps.is_available():
+    device = torch.device("mps")
+else:
+    device = torch.device("cpu")
 
 def init_seed(config):
     if config['manualSeed'] is None:
@@ -91,7 +96,6 @@ def choose_metric(config):
 
 def test_one_dataset(model, data_loader):
     prediction_lists = []
-    feature_lists = []
     label_lists = []
     for i, data_dict in tqdm(enumerate(data_loader), total=len(data_loader)):
         # get data
@@ -109,9 +113,8 @@ def test_one_dataset(model, data_loader):
         predictions = inference(model, data_dict)
         label_lists += list(data_dict['label'].cpu().detach().numpy())
         prediction_lists += list(predictions['prob'].cpu().detach().numpy())
-        feature_lists += list(predictions['feat'].cpu().detach().numpy())
     
-    return np.array(prediction_lists), np.array(label_lists),np.array(feature_lists)
+    return np.array(prediction_lists), np.array(label_lists)
     
 def test_epoch(model, test_data_loaders):
     # set model to eval mode
@@ -125,7 +128,7 @@ def test_epoch(model, test_data_loaders):
     for key in keys:
         data_dict = test_data_loaders[key].dataset.data_dict
         # compute loss for each dataset
-        predictions_nps, label_nps,feat_nps = test_one_dataset(model, test_data_loaders[key])
+        predictions_nps, label_nps = test_one_dataset(model, test_data_loaders[key])
         
         # compute metric for each dataset
         metric_one_dataset = get_test_metrics(y_pred=predictions_nps, y_true=label_nps,
@@ -135,6 +138,8 @@ def test_epoch(model, test_data_loaders):
         # info for each dataset
         tqdm.write(f"dataset: {key}")
         for k, v in metric_one_dataset.items():
+            if k in ['pred', 'label']:
+                continue
             tqdm.write(f"{k}: {v}")
 
     return metrics_all_datasets
@@ -146,6 +151,7 @@ def inference(model, data_dict):
 
 
 def main():
+    print(f"===> Using device: {device}")
     # parse options and load config
     with open(args.detector_path, 'r') as f:
         config = yaml.safe_load(f)
