@@ -162,7 +162,7 @@ class CustomSampler(Sampler):
 
 class LSDADataset(DeepfakeAbstractBaseDataset):
 
-    on_3060 = "3060" in torch.cuda.get_device_name()
+    on_3060 = torch.cuda.is_available() and "3060" in torch.cuda.get_device_name(0)
     transfer_dict = {
         'youtube':'FF-real',
         'Deepfakes':'FF-DF',

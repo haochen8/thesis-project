@@ -49,7 +49,16 @@ from dataset.abstract_dataset import DeepfakeAbstractBaseDataset
 # Define face detector and predictor models
 face_detector = dlib.get_frontal_face_detector()
 predictor_path = 'preprocessing/dlib_tools/shape_predictor_81_face_landmarks.dat'
-face_predictor = dlib.shape_predictor(predictor_path)
+
+
+def load_face_predictor(path):
+    if not os.path.exists(path):
+        raise FileNotFoundError(
+            f"Required dlib predictor not found: {path}. "
+            "Download shape_predictor_81_face_landmarks.dat and place it under "
+            "preprocessing/dlib_tools/ when using FWA."
+        )
+    return dlib.shape_predictor(path)
 
 
 mean_face_x = np.array([
@@ -324,6 +333,8 @@ def align(im, face_detector, lmark_predictor, scale=0):
 class FWABlendDataset(DeepfakeAbstractBaseDataset):
     def __init__(self, config=None):
         super().__init__(config, mode='train')
+        self.face_detector = face_detector
+        self.face_predictor = load_face_predictor(predictor_path)
         self.transforms = T.Compose([
             T.ToTensor(),
             T.Normalize(mean=config['mean'],
@@ -369,7 +380,7 @@ class FWABlendDataset(DeepfakeAbstractBaseDataset):
         im = np.array(self.load_rgb(img_path))
 
         # Get the alignment of the head
-        face_cache = align(im, face_detector, face_predictor)
+        face_cache = align(im, self.face_detector, self.face_predictor)
 
         # Get the aligned face and landmarks
         aligned_im_head, aligned_shape = get_aligned_face_and_landmarks(im, face_cache)

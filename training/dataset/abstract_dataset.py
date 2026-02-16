@@ -205,11 +205,12 @@ class DeepfakeAbstractBaseDataset(data.Dataset):
                     raise ValueError(f'Label {video_info["label"]} is not found in the configuration file.')
                 label = self.config['label_dict'][video_info['label']]
                 frame_paths = video_info['frames']
-                # sorted video path to the lists
-                if '\\' in frame_paths[0]:
-                    frame_paths = sorted(frame_paths, key=lambda x: int(x.split('\\')[-1].split('.')[0]))
-                else:
-                    frame_paths = sorted(frame_paths, key=lambda x: int(x.split('/')[-1].split('.')[0]))
+                # Sort frame paths; support both numeric and non-numeric filenames.
+                def frame_sort_key(frame_path):
+                    stem = os.path.splitext(os.path.basename(frame_path))[0]
+                    return (0, int(stem)) if stem.isdigit() else (1, stem)
+
+                frame_paths = sorted(frame_paths, key=frame_sort_key)
 
                 # Consider the case when the actual number of frames (e.g., 270) is larger than the specified (i.e., self.frame_num=32)
                 # In this case, we select self.frame_num frames from the original 270 frames
@@ -279,6 +280,17 @@ class DeepfakeAbstractBaseDataset(data.Dataset):
         
         return frame_path_list, label_list, video_name_list
 
+    def resolve_file_path(self, file_path):
+        """Resolve dataset paths for relative, absolute, and legacy formats."""
+        if file_path is None:
+            return None
+        if os.path.isabs(file_path) or os.path.exists(file_path):
+            return file_path
+        if len(file_path) > 1 and file_path[1] == ':' and os.path.exists(file_path):
+            return file_path
+        rel_path = file_path.lstrip('./\\')
+        return os.path.join(self.config["rgb_dir"], rel_path)
+
      
     def load_rgb(self, file_path):
         """
@@ -295,8 +307,7 @@ class DeepfakeAbstractBaseDataset(data.Dataset):
         """
         size = self.config['resolution'] # if self.mode == "train" else self.config['resolution']
         if not self.lmdb:
-            if not file_path[0] == '.':
-                file_path =  f'./{self.config["rgb_dir"]}\\'+file_path
+            file_path = self.resolve_file_path(file_path)
             assert os.path.exists(file_path), f"{file_path} does not exist"
             img = cv2.imread(file_path)
             if img is None:
@@ -332,8 +343,7 @@ class DeepfakeAbstractBaseDataset(data.Dataset):
         if file_path is None:
             return np.zeros((size, size, 1))
         if not self.lmdb:
-            if not file_path[0] == '.':
-                file_path =  f'./{self.config["rgb_dir"]}\\'+file_path
+            file_path = self.resolve_file_path(file_path)
             if os.path.exists(file_path):
                 mask = cv2.imread(file_path, 0)
                 if mask is None:
@@ -373,8 +383,7 @@ class DeepfakeAbstractBaseDataset(data.Dataset):
         if file_path is None:
             return np.zeros((81, 2))
         if not self.lmdb:
-            if not file_path[0] == '.':
-                file_path =  f'./{self.config["rgb_dir"]}\\'+file_path
+            file_path = self.resolve_file_path(file_path)
             if os.path.exists(file_path):
                 landmark = np.load(file_path)
             else:
