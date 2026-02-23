@@ -1,0 +1,2 @@
+detector_key,detector_name,family,runs_expected,runs_success,complete,acc_mean,auc_mean,eer_mean,ap_mean,auc_gap,runtime_total_sec,runtime_norm,score,status_note
+xception,Xception,naive,1,1,1,0.631,0.6656719999999999,0.392,0.7117617465412283,,26.261,0.0,0.5127719493082458,ok

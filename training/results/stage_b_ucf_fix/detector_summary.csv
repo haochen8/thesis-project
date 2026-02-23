@@ -1,0 +1,2 @@
+detector_key,detector_name,family,runs_expected,runs_success,complete,acc_mean,auc_mean,eer_mean,ap_mean,auc_gap,runtime_total_sec,runtime_norm,score,status_note
+ucf,UCF,spatial,2,2,1,0.5057,0.43337813999999997,0.5445,0.4897130066855825,0.024853640000000066,887.113,0.0,0.30221314153711654,ok

@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-02-23T16:12:11.887103",
+  "datasets": [
+    "Dataset-1",
+    "NVIDIA-dataset"
+  ],
+  "scoring_formula": "0.55*AUC + 0.20*AP + 0.10*ACC - 0.15*EER - 0.08*runtime_norm - 0.12*auc_gap",
+  "champions": [],
+  "num_ranked_complete_detectors": 0
+}

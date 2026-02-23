@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-02-23T16:34:20.880173",
+  "datasets": [
+    "Dataset-1-mini",
+    "NVIDIA-dataset-mini"
+  ],
+  "scoring_formula": "0.55*AUC + 0.20*AP + 0.10*ACC - 0.15*EER - 0.08*runtime_norm - 0.12*auc_gap",
+  "champions": [
+    {
+      "rank": 1,
+      "detector_key": "xception",
+      "detector_name": "Xception",
+      "family": "naive",
+      "score": 0.3566255967087858,
+      "auc_mean": 0.531816,
+      "ap_mean": 0.5732611835439292,
+      "eer_mean": 0.487,
+      "acc_mean": 0.5465,
+      "auc_gap": 0.26771199999999995,
+      "runtime_total_sec": 53.285
+    }
+  ],
+  "num_ranked_complete_detectors": 1
+}

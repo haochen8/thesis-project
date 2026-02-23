@@ -1,0 +1,25 @@
+detector_key,detector_name,family,runs_expected,runs_success,complete,acc_mean,auc_mean,eer_mean,ap_mean,auc_gap,runtime_total_sec,runtime_norm,score,status_note
+mesonet,MesoNet,naive,2,2,1,0.50105,0.60818285,0.4207,0.5532715224786929,0.18300278000000003,168.326,0.0,0.41019453839573866,ok
+xception,Xception,naive,2,2,1,0.55145,0.54428937,0.47829999999999995,0.5856933454960825,0.24186109999999994,289.94399999999996,0.16919894210663236,0.3573385752306859,ok
+mesoinception,MesoInception,naive,2,2,1,0.5163,0.5144035,0.48319999999999996,0.5068902224597014,0.10102308000000004,173.0,0.006502621778078911,0.35080699014969396,ok
+ffd,FFD,spatial,2,2,1,0.51685,0.54870207,0.4655,0.5423839534241582,0.2192789,452.639,0.39554555104641564,0.33416581710111837,ok
+efficientnet-b4,EfficientNet-B4,naive,2,2,1,0.505,0.44606138999999995,0.5376000000000001,0.5063673777052137,0.00882645999999998,531.854,0.505752051720468,0.2749479007034053,ok
+capsule,Capsule,spatial,2,2,1,0.47004999999999997,0.42815123,0.5543,0.4869148088990707,0.08875273999999994,568.153,0.556252408571663,0.24157561679408118,ok
+ucf,UCF,spatial,2,2,1,0.5057,0.43337813999999997,0.5445,0.4897130066855825,0.024853640000000066,887.113,1.0,0.2222131415371165,ok
+recce,RECCE,spatial,2,2,1,0.49369999999999997,0.39710062,0.5776,0.45758941723360835,0.08667259999999993,647.3589999999999,0.6664463881511489,0.20893680139462986,ok
+core,CORE,spatial,2,2,1,0.48055000000000003,0.33799082999999996,0.6244000000000001,0.4294456335192216,0.053783899999999996,444.074,0.38362964271752276,0.18903464378644244,ok
+cnn-aug,CNN-Aug,naive,2,2,1,0.3581,0.29884205,0.6403000000000001,0.3938546540028206,0.24300602000000007,286.26,0.16407364073084238,0.1406124446420968,ok
+clip,CLIP,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+dsp-fwa,DSP-FWA,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+effort,Effort,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+face-xray,Face X-ray,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+iid,IID,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+local-relation,Local-relation,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+lsda,LSDA,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+multi-attention,Multi-Attention,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+pcl-i2g,PCL-I2G,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+rfm,RFM,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+sbi,SBI,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+sia,SIA,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+sladd,SLADD,spatial,2,0,0,,,,,,,,,incomplete_or_failed
+uia-vit,UIA-ViT,spatial,2,0,0,,,,,,,,,incomplete_or_failed

@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-02-23T17:31:28.009808",
+  "repo_root": "/Users/Hao/thesis-project",
+  "test_script": "/Users/Hao/thesis-project/training/test.py",
+  "stage": "B",
+  "datasets": [
+    "Dataset-1-stageB",
+    "NVIDIA-dataset-stageB"
+  ],
+  "selected_detectors": [
+    "xception",
+    "mesonet",
+    "mesoinception",
+    "cnn-aug",
+    "efficientnet-b4",
+    "capsule",
+    "dsp-fwa",
+    "face-xray",
+    "ffd",
+    "core",
+    "recce",
+    "ucf",
+    "local-relation",
+    "iid",
+    "rfm",
+    "sia",
+    "sladd",
+    "uia-vit",
+    "clip",
+    "sbi",
+    "pcl-i2g",
+    "multi-attention",
+    "lsda",
+    "effort"
+  ],
+  "weights_root": "/Users/Hao/thesis-project/training/weights",
+  "weights_map": {},
+  "timeout_minutes": 20.0,
+  "dry_run": true
+}

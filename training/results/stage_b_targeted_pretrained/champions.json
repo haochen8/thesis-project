@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-02-23T18:05:00.556367",
+  "datasets": [
+    "Dataset-1-stageB",
+    "NVIDIA-dataset-stageB"
+  ],
+  "scoring_formula": "0.55*AUC + 0.20*AP + 0.10*ACC - 0.15*EER - 0.08*runtime_norm - 0.12*auc_gap",
+  "champions": [
+    {
+      "rank": 1,
+      "detector_key": "ffd",
+      "detector_name": "FFD",
+      "family": "spatial",
+      "score": 0.3580035828526375,
+      "auc_mean": 0.54870207,
+      "ap_mean": 0.5423839534241582,
+      "eer_mean": 0.4655,
+      "acc_mean": 0.51685,
+      "auc_gap": 0.2192789,
+      "runtime_total_sec": 452.639
+    },
+    {
+      "rank": 2,
+      "detector_key": "efficientnet-b4",
+      "detector_name": "EfficientNet-B4",
+      "family": "naive",
+      "score": 0.2354080648410427,
+      "auc_mean": 0.44606138999999995,
+      "ap_mean": 0.5063673777052137,
+      "eer_mean": 0.5376000000000001,
+      "acc_mean": 0.505,
+      "auc_gap": 0.00882645999999998,
+      "runtime_total_sec": 531.854
+    },
+    {
+      "rank": 3,
+      "detector_key": "core",
+      "detector_name": "CORE",
+      "family": "spatial",
+      "score": 0.21972501520384427,
+      "auc_mean": 0.33799082999999996,
+      "ap_mean": 0.4294456335192216,
+      "eer_mean": 0.6244000000000001,
+      "acc_mean": 0.48055000000000003,
+      "auc_gap": 0.053783899999999996,
+      "runtime_total_sec": 444.074
+    }
+  ],
+  "num_ranked_complete_detectors": 3
+}
