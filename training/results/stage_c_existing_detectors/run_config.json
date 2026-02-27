@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-02-27T17:16:13.758423",
+  "repo_root": "/Users/Hao/thesis-project",
+  "test_script": "/Users/Hao/thesis-project/training/test.py",
+  "stage": "C",
+  "datasets": [
+    "Dataset-1",
+    "NVIDIA-dataset"
+  ],
+  "selected_detectors": [
+    "xception",
+    "mesonet",
+    "mesoinception",
+    "cnn-aug",
+    "efficientnet-b4",
+    "capsule",
+    "ffd",
+    "core",
+    "recce",
+    "ucf"
+  ],
+  "weights_root": "/Users/Hao/thesis-project/training/weights",
+  "weights_map": {},
+  "timeout_minutes": 45.0,
+  "dry_run": false,
+  "evaluation_scope": "existing_detectors_with_available_weights_only",
+  "tested_detectors": [
+    "mesonet",
+    "mesoinception",
+    "xception",
+    "ffd",
+    "efficientnet-b4",
+    "capsule",
+    "ucf",
+    "recce",
+    "core",
+    "cnn-aug"
+  ],
+  "excluded_spatial_detectors_missing_weights": [
+    "dsp-fwa",
+    "face-xray",
+    "local-relation",
+    "iid",
+    "rfm",
+    "sia",
+    "sladd",
+    "uia-vit",
+    "clip",
+    "sbi",
+    "pcl-i2g",
+    "multi-attention",
+    "lsda",
+    "effort"
+  ]
+}
