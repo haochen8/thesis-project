@@ -1,0 +1,11 @@
+sample_index,image,label,prob,pred
+0,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000001__gaussian_blur_v1__4a1525bdf7__v0.png,0,0.5717853307723999,1
+1,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000002__gaussian_blur_v1__4a1525bdf7__v0.png,1,0.9346842765808105,1
+2,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000004__gaussian_blur_v1__4a1525bdf7__v0.png,0,0.3433085083961487,0
+3,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000004__gaussian_blur_v1__4a1525bdf7__v0.png,1,0.018916934728622437,0
+4,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000005__gaussian_blur_v1__4a1525bdf7__v0.png,0,0.37856265902519226,0
+5,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000005__gaussian_blur_v1__4a1525bdf7__v0.png,1,0.5070004463195801,1
+6,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000003__gaussian_blur_v1__4a1525bdf7__v0.png,1,0.38581714034080505,0
+7,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000002__gaussian_blur_v1__4a1525bdf7__v0.png,0,0.30915015935897827,0
+8,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000003__gaussian_blur_v1__4a1525bdf7__v0.png,0,0.41190794110298157,0
+9,/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000001__gaussian_blur_v1__4a1525bdf7__v0.png,1,0.4811483919620514,0

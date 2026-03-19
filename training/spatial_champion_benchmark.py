@@ -280,6 +280,11 @@ def main() -> int:
     parser.add_argument("--include-frequency", action="store_true", help="Include frequency detectors (F3Net/SPSL/SRM) in the candidate pool.")
     parser.add_argument("--weights-root", default="training/weights", help="Folder containing detector weight files.")
     parser.add_argument("--weights-map", default=None, help="JSON file mapping detector key -> weight path.")
+    parser.add_argument(
+        "--dataset-json-folder",
+        default="preprocessing/dataset_json",
+        help="Folder containing dataset JSON manifests consumed by training/test.py.",
+    )
     parser.add_argument("--output-dir", default=None, help="Output folder for logs/CSVs (default: timestamped folder).")
     parser.add_argument("--python-bin", default=sys.executable, help="Python executable used to run training/test.py.")
     parser.add_argument("--timeout-minutes", type=float, default=20.0, help="Per-run timeout in minutes.")
@@ -287,6 +292,11 @@ def main() -> int:
     parser.add_argument("--stop-on-error", action="store_true", help="Stop at first failed execution.")
     parser.add_argument("--list-detectors", action="store_true", help="List supported spatial detectors and exit.")
     parser.add_argument("--disable-mps-fallback", action="store_true", help="Do not set PYTORCH_ENABLE_MPS_FALLBACK=1.")
+    parser.add_argument(
+        "--export-test-artifacts",
+        action="store_true",
+        help="Ask training/test.py to write per-sample predictions and per-dataset metric files for each run.",
+    )
     args = parser.parse_args()
 
     candidate_pool: Tuple[DetectorSpec, ...] = SPATIAL_DETECTORS + (FREQUENCY_DETECTORS if args.include_frequency else ())
@@ -302,6 +312,9 @@ def main() -> int:
     weights_root = Path(args.weights_root).expanduser()
     if not weights_root.is_absolute():
         weights_root = (repo_root / weights_root).resolve()
+    dataset_json_folder = Path(args.dataset_json_folder).expanduser()
+    if not dataset_json_folder.is_absolute():
+        dataset_json_folder = (repo_root / dataset_json_folder).resolve()
 
     weights_map = load_weights_map(Path(args.weights_map).expanduser().resolve()) if args.weights_map else {}
     if args.stage and args.datasets:
@@ -338,8 +351,10 @@ def main() -> int:
         "selected_detectors": [spec.key for spec in selected],
         "weights_root": str(weights_root),
         "weights_map": weights_map,
+        "dataset_json_folder": str(dataset_json_folder),
         "timeout_minutes": args.timeout_minutes,
         "dry_run": args.dry_run,
+        "export_test_artifacts": args.export_test_artifacts,
     }
     (output_dir / "run_config.json").write_text(json.dumps(run_config, indent=2))
 
@@ -369,6 +384,9 @@ def main() -> int:
                 "eer": "",
                 "ap": "",
                 "video_auc": "",
+                "artifacts_dir": "",
+                "prediction_artifacts_path": "",
+                "metrics_artifacts_path": "",
                 "log_path": "",
                 "command": "",
             }
@@ -376,6 +394,12 @@ def main() -> int:
             dataset_slug = sanitize_name(dataset)
             log_path = logs_dir / f"{detector.key}__{dataset_slug}.log"
             row["log_path"] = str(log_path)
+            run_artifacts_dir = None
+            if args.export_test_artifacts:
+                run_artifacts_dir = output_dir / "test_artifacts" / f"{detector.key}__{dataset_slug}"
+                row["artifacts_dir"] = str(run_artifacts_dir)
+                row["prediction_artifacts_path"] = str(run_artifacts_dir / sanitize_name(dataset) / "predictions.csv")
+                row["metrics_artifacts_path"] = str(run_artifacts_dir / sanitize_name(dataset) / "metrics.json")
 
             if not config_path.exists():
                 row["status"] = "config_missing"
@@ -398,9 +422,13 @@ def main() -> int:
                 str(config_path),
                 "--weights_path",
                 str(weight_path),
+                "--dataset_json_folder",
+                str(dataset_json_folder),
                 "--test_dataset",
                 dataset,
             ]
+            if run_artifacts_dir is not None:
+                cmd.extend(["--export_artifacts_dir", str(run_artifacts_dir)])
             row["command"] = shlex.join(cmd)
 
             if args.dry_run:
@@ -483,6 +511,9 @@ def main() -> int:
         "eer",
         "ap",
         "video_auc",
+        "artifacts_dir",
+        "prediction_artifacts_path",
+        "metrics_artifacts_path",
         "log_path",
         "command",
     ]
@@ -662,6 +693,8 @@ def main() -> int:
     md_lines.append(f"- Detector summary: `{output_dir / 'detector_summary.csv'}`")
     md_lines.append(f"- Champion JSON: `{output_dir / 'champions.json'}`")
     md_lines.append(f"- Run config: `{output_dir / 'run_config.json'}`")
+    if args.export_test_artifacts:
+        md_lines.append(f"- Test artifacts root: `{output_dir / 'test_artifacts'}`")
     md_lines.append("")
 
     (output_dir / "leaderboard.md").write_text("\n".join(md_lines))

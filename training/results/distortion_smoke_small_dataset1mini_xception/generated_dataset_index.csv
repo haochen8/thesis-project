@@ -1,0 +1,2 @@
+dataset_name,source_dataset_name,recipe_id,recipe_instance_id,recipe_label,variant,manifest_path,input_jsonl
+Dataset-1-mini__gaussian_blur_v1__4a1525bdf7__v0,Dataset-1-mini,gaussian_blur_v1,gaussian_blur_v1__4a1525bdf7,gaussian_blur,0,/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_xception/generated_dataset_json/Dataset-1-mini__gaussian_blur_v1__4a1525bdf7__v0.json,/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_xception/work/augmented/Dataset-1-mini.jsonl

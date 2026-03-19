@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-03-19T13:11:04.259467",
+  "datasets": [
+    "Dataset-1-mini__clean_subset__gaussian_blur_v1__4a1525bdf7__v0"
+  ],
+  "scoring_formula": "0.55*AUC + 0.20*AP + 0.10*ACC - 0.15*EER - 0.08*runtime_norm - 0.12*auc_gap",
+  "champions": [
+    {
+      "rank": 1,
+      "detector_key": "xception",
+      "detector_name": "Xception",
+      "family": "naive",
+      "score": 0.5138869475142864,
+      "auc_mean": 0.6819999999999999,
+      "ap_mean": 0.6989347375714321,
+      "eer_mean": 0.4,
+      "acc_mean": 0.59,
+      "auc_gap": "",
+      "runtime_total_sec": 25.201
+    }
+  ],
+  "num_ranked_complete_detectors": 1
+}

@@ -1,6 +1,8 @@
 """
 eval pretained model.
 """
+import csv
+import json
 import os
 import numpy as np
 from os.path import join
@@ -10,6 +12,7 @@ import datetime
 import time
 import yaml
 import pickle
+import re
 from tqdm import tqdm
 from copy import deepcopy
 from PIL import Image as pil_image
@@ -33,6 +36,7 @@ from metrics.base_metrics_class import Recorder
 from collections import defaultdict
 
 import argparse
+from pathlib import Path
 from logger import create_logger
 
 parser = argparse.ArgumentParser(description='Process some paths.')
@@ -42,6 +46,10 @@ parser.add_argument('--detector_path', type=str,
 parser.add_argument("--test_dataset", nargs="+")
 parser.add_argument('--weights_path', type=str, 
                     default='/mntcephfs/lab_data/zhiyuanyan/benchmark_results/auc_draw/cnn_aug/resnet34_2023-05-20-16-57-22/test/FaceForensics++/ckpt_epoch_9_best.pth')
+parser.add_argument('--export_artifacts_dir', type=str, default=None,
+                    help='Optional directory for per-dataset prediction CSVs and metric JSONs.')
+parser.add_argument('--dataset_json_folder', type=str, default=None,
+                    help='Optional override for config["dataset_json_folder"].')
 #parser.add_argument("--lmdb", action='store_true', default=False)
 args = parser.parse_args()
 
@@ -51,6 +59,25 @@ elif getattr(torch.backends, "mps", None) is not None and torch.backends.mps.is_
     device = torch.device("mps")
 else:
     device = torch.device("cpu")
+
+
+def sanitize_name(text):
+    return re.sub(r"[^A-Za-z0-9_.-]+", "_", str(text))
+
+
+def serialize_image_ref(image_ref):
+    if isinstance(image_ref, (list, tuple)):
+        return json.dumps(image_ref, default=str)
+    return str(image_ref)
+
+
+def to_jsonable(value):
+    if isinstance(value, np.generic):
+        return value.item()
+    if isinstance(value, np.ndarray):
+        return value.tolist()
+    return value
+
 
 def init_seed(config):
     if config['manualSeed'] is None:
@@ -97,6 +124,9 @@ def choose_metric(config):
 def test_one_dataset(model, data_loader):
     prediction_lists = []
     label_lists = []
+    sample_records = []
+    dataset_images = data_loader.dataset.data_dict['image']
+    sample_index = 0
     for i, data_dict in tqdm(enumerate(data_loader), total=len(data_loader)):
         # get data
         data, label, mask, landmark = \
@@ -111,12 +141,53 @@ def test_one_dataset(model, data_loader):
 
         # model forward without considering gradient computation
         predictions = inference(model, data_dict)
-        label_lists += list(data_dict['label'].cpu().detach().numpy())
-        prediction_lists += list(predictions['prob'].cpu().detach().numpy())
+        batch_labels = data_dict['label'].cpu().detach().numpy().reshape(-1)
+        batch_probs = predictions['prob'].cpu().detach().numpy().reshape(-1)
+        batch_preds = (batch_probs > 0.5).astype(int)
+        batch_images = dataset_images[sample_index:sample_index + len(batch_labels)]
+
+        label_lists += list(batch_labels)
+        prediction_lists += list(batch_probs)
+        for local_index, (image_ref, prob, label_value, pred_value) in enumerate(zip(batch_images, batch_probs, batch_labels, batch_preds)):
+            sample_records.append({
+                'sample_index': sample_index + local_index,
+                'image': serialize_image_ref(image_ref),
+                'label': int(label_value),
+                'prob': float(prob),
+                'pred': int(pred_value),
+            })
+        sample_index += len(batch_labels)
     
-    return np.array(prediction_lists), np.array(label_lists)
+    return np.array(prediction_lists), np.array(label_lists), sample_records
+
+
+def write_dataset_artifacts(export_root, dataset_name, metric_one_dataset, sample_records):
+    export_root = Path(export_root)
+    dataset_dir = export_root / sanitize_name(dataset_name)
+    dataset_dir.mkdir(parents=True, exist_ok=True)
+
+    predictions_path = dataset_dir / "predictions.csv"
+    with predictions_path.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["sample_index", "image", "label", "prob", "pred"])
+        writer.writeheader()
+        for row in sample_records:
+            writer.writerow(row)
+
+    metrics_path = dataset_dir / "metrics.json"
+    metrics_payload = {
+        "dataset": dataset_name,
+        "num_samples": len(sample_records),
+        "metrics": {
+            k: to_jsonable(v)
+            for k, v in metric_one_dataset.items()
+            if k not in ("pred", "label")
+        },
+    }
+    metrics_path.write_text(json.dumps(metrics_payload, indent=2))
+
+    return predictions_path, metrics_path
     
-def test_epoch(model, test_data_loaders):
+def test_epoch(model, test_data_loaders, export_artifacts_dir=None):
     # set model to eval mode
     model.eval()
 
@@ -128,12 +199,22 @@ def test_epoch(model, test_data_loaders):
     for key in keys:
         data_dict = test_data_loaders[key].dataset.data_dict
         # compute loss for each dataset
-        predictions_nps, label_nps = test_one_dataset(model, test_data_loaders[key])
+        predictions_nps, label_nps, sample_records = test_one_dataset(model, test_data_loaders[key])
         
         # compute metric for each dataset
         metric_one_dataset = get_test_metrics(y_pred=predictions_nps, y_true=label_nps,
                                               img_names=data_dict['image'])
         metrics_all_datasets[key] = metric_one_dataset
+
+        if export_artifacts_dir:
+            predictions_path, metrics_path = write_dataset_artifacts(
+                export_artifacts_dir,
+                key,
+                metric_one_dataset,
+                sample_records,
+            )
+            tqdm.write(f"predictions_export: {predictions_path}")
+            tqdm.write(f"metrics_export: {metrics_path}")
         
         # info for each dataset
         tqdm.write(f"dataset: {key}")
@@ -167,6 +248,14 @@ def main():
     if args.weights_path:
         config['weights_path'] = args.weights_path
         weights_path = args.weights_path
+    if args.dataset_json_folder:
+        dataset_json_folder = os.path.abspath(os.path.expanduser(args.dataset_json_folder))
+        config['dataset_json_folder'] = dataset_json_folder
+        config2['dataset_json_folder'] = dataset_json_folder
+    export_artifacts_dir = None
+    if args.export_artifacts_dir:
+        export_artifacts_dir = Path(os.path.abspath(os.path.expanduser(args.export_artifacts_dir)))
+        export_artifacts_dir.mkdir(parents=True, exist_ok=True)
     
     # init seed
     init_seed(config)
@@ -194,7 +283,7 @@ def main():
         print('Fail to load the pre-trained weights')
     
     # start testing
-    best_metric = test_epoch(model, test_data_loaders)
+    best_metric = test_epoch(model, test_data_loaders, export_artifacts_dir=export_artifacts_dir)
     print('===> Test Done!')
 
 if __name__ == '__main__':

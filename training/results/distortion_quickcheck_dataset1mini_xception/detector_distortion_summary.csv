@@ -1,0 +1,2 @@
+detector_key,detector_name,family,distortion_runs,mean_auc,worst_auc,mean_delta_auc,worst_delta_auc,mean_delta_ap,mean_delta_acc,mean_delta_eer
+xception,Xception,naive,1,0.64,0.64,,,,,

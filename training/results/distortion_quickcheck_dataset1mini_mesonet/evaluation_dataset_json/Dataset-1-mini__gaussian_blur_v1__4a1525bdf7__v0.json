@@ -1,0 +1,72 @@
+{
+  "Dataset-1-mini__gaussian_blur_v1__4a1525bdf7__v0": {
+    "roop_Fake": {
+      "test": {
+        "000001": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000001__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000002": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000002__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000003": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000003__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000004": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000004__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000005": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Fake/000005__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Fake"
+        }
+      }
+    },
+    "roop_Real": {
+      "test": {
+        "000001": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000001__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000002": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000002__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000003": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000003__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000004": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000004__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000005": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_mesonet/work/distorted_outputs/Dataset-1-mini/gaussian_blur_v1/roop_Real/000005__gaussian_blur_v1__4a1525bdf7__v0.png"
+          ],
+          "label": "roop_Real"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-03-19T13:11:04.315010",
+  "repo_root": "/Users/Hao/thesis-project",
+  "test_script": "/Users/Hao/thesis-project/training/test.py",
+  "stage": "",
+  "datasets": [
+    "Dataset-1-mini__gaussian_blur_v1__4a1525bdf7__v0"
+  ],
+  "selected_detectors": [
+    "xception"
+  ],
+  "weights_root": "/Users/Hao/thesis-project/training/weights",
+  "weights_map": {},
+  "dataset_json_folder": "/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_xception_matched/evaluation_dataset_json",
+  "timeout_minutes": 20.0,
+  "dry_run": false,
+  "export_test_artifacts": true
+}
