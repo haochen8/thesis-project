@@ -1,0 +1,11 @@
+{
+  "dataset": "NVIDIA-dataset-mini__gaussian_blur_v1__4a1525bdf7__v0",
+  "num_samples": 100,
+  "metrics": {
+    "acc": 0.33,
+    "auc": 0.30560000000000004,
+    "eer": 0.64,
+    "ap": 0.3949044987087209,
+    "video_auc": 0.30560000000000004
+  }
+}

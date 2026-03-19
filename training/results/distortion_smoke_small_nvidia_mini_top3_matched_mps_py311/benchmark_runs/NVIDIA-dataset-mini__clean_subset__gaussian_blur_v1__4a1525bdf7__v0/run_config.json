@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-03-19T15:03:05.499433",
+  "repo_root": "/Users/Hao/thesis-project",
+  "test_script": "/Users/Hao/thesis-project/training/test.py",
+  "stage": "",
+  "datasets": [
+    "NVIDIA-dataset-mini__clean_subset__gaussian_blur_v1__4a1525bdf7__v0"
+  ],
+  "selected_detectors": [
+    "mesonet",
+    "mesoinception",
+    "xception"
+  ],
+  "weights_root": "/Users/Hao/thesis-project/training/weights",
+  "weights_map": {},
+  "dataset_json_folder": "/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311/evaluation_dataset_json",
+  "timeout_minutes": 20.0,
+  "dry_run": false,
+  "export_test_artifacts": true
+}

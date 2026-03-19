@@ -298,3 +298,156 @@ Interpretation:
 
 - The full `Dataset-1-mini` clean-vs-distorted smoke run was started and then stopped after confirming that the current environment was CPU-only.
 - Reason: it would have consumed substantially more time without adding new integration confidence once the matched-subset small smoke was available and verified.
+
+## 2026-03-19 Python 3.11 MPS Migration Outcome
+
+### Why Another Environment Change Was Needed
+
+- The original `DeepfakeBench` environment stayed on `Python 3.9` and `torch 2.8.0`.
+- Inside that environment, MPS was not usable for the new distortion evaluation phase.
+- A direct torch upgrade path in `Python 3.9` was not available with the working nightly wheels.
+- The practical fix was to move the benchmark path to a new `Python 3.11` environment while keeping the project code and weight files in the same workspace.
+
+### Important Runtime Observation
+
+Two separate facts had to be disentangled:
+
+1. The old `DeepfakeBench` environment was genuinely wrong for the needed MPS path.
+2. The Codex sandbox also hides MPS availability even when the environment itself is correct.
+
+Observed result:
+
+- inside the Codex sandbox: `mps_available=False`
+- outside the sandbox in a normal macOS process: `mps_available=True`
+
+This is why the final distortion benchmarks were run outside the sandbox, while file edits and verification reads stayed inside it.
+
+### Environment Added
+
+New benchmark environment:
+
+- `DeepfakeBench311`
+
+Verified outside the sandbox:
+
+```text
+python 3.11.15
+torch 2.12.0.dev20260318
+mps_built True
+mps_available True
+mps:0
+```
+
+### Why Additional Code Changes Were Needed For `DeepfakeBench311`
+
+The new environment was intentionally kept minimal. That exposed several eager imports that were unrelated to the requested top-3 benchmark path but still blocked startup.
+
+Those imports had to be made optional so the chosen detector path could run without installing every training-only and video-only dependency.
+
+Files updated for that reason:
+
+1. `/Users/Hao/thesis-project/training/dataset/__init__.py`
+- Why: it eagerly imported dataset classes that required `dlib` and other extra dependencies even though the evaluation path only needed `DeepfakeAbstractBaseDataset`.
+- Change: optionalized non-essential dataset imports.
+
+2. `/Users/Hao/thesis-project/training/networks/__init__.py`
+- Why: it eagerly imported `EfficientNetB4`, which required `efficientnet_pytorch` even when running only `mesonet`, `mesoinception`, and `xception`.
+- Change: optionalized non-essential backbone imports.
+
+3. `/Users/Hao/thesis-project/training/loss/__init__.py`
+- Why: it eagerly imported optional losses such as `region_independent_loss`, which pulled in `kornia` through unrelated detector code.
+- Change: optionalized non-essential loss imports.
+
+4. `/Users/Hao/thesis-project/training/detectors/__init__.py`
+- Why: besides the earlier detector optionalization, it still eagerly loaded `slowfast` support, which pulled in `simplejson` and other video-detector dependencies.
+- Change: made `slowfast` optional as well.
+
+5. `/Users/Hao/thesis-project/training/test.py`
+- Why: earlier in the migration path, this file still imported unused training-only datasets and trainer code, which unnecessarily forced `dlib` requirements.
+- Change: those unused imports were already removed so the benchmark entry point could stay focused on the actual evaluation path.
+
+### Minimal Requirements Artifact Added
+
+To make the new environment reproducible without replaying the entire old pip freeze, a smaller benchmark-specific requirements file was added:
+
+- `/Users/Hao/thesis-project/training/results/deepfakebench_py311_minimal_benchmark_requirements_2026-03-19.txt`
+
+This file pins only the packages needed for the current benchmark path, including:
+
+- `numpy==1.26.4`
+- `PyYAML==6.0`
+- `tqdm==4.61.0`
+- `lmdb==1.7.5`
+- `opencv-python-headless==4.10.0.84`
+- `albumentations==1.1.0`
+- `scikit-learn==1.3.2`
+- `scipy==1.11.4`
+- `tensorboard==2.10.1`
+- `efficientnet_pytorch==0.7.1`
+
+### Benchmark Entry Point Re-Verified In The New Env
+
+Command outcome reproduced in `DeepfakeBench311` outside the sandbox:
+
+```text
+===> Using device: mps
+===> Load checkpoint done!
+dataset: Dataset-1-mini
+acc: 0.631
+auc: 0.6656719999999999
+eer: 0.392
+ap: 0.7117617465412283
+video_auc: 0.6656719999999999
+===> Test Done!
+```
+
+This confirmed that the migrated environment still reproduces the known Xception mini benchmark on MPS.
+
+### New Verified Distortion Runs In `DeepfakeBench311`
+
+#### 1. `Dataset-1-mini` matched-subset top-3 run
+
+Output directory:
+
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched_mps_py311`
+
+Result summary:
+
+- all `6` runs succeeded
+- all benchmark rows used `device=mps`
+- Gaussian blur deltas from `detector_distortion_summary.csv`:
+  - `mesonet`: `mean_delta_auc=-0.0312`
+  - `mesoinception`: `mean_delta_auc=+0.0276`
+  - `xception`: `mean_delta_auc=-0.0616`
+
+Detector-level details are in:
+
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched_mps_py311/detector_distortion_comparison.csv`
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched_mps_py311/combined_raw_runs.csv`
+
+#### 2. `NVIDIA-dataset-mini` matched-subset top-3 run
+
+Output directory:
+
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311`
+
+Result summary:
+
+- all `6` runs succeeded
+- all benchmark rows used `device=mps`
+- Gaussian blur deltas from `detector_distortion_summary.csv`:
+  - `mesonet`: `mean_delta_auc=+0.0592`
+  - `mesoinception`: `mean_delta_auc=-0.0864`
+  - `xception`: `mean_delta_auc=-0.0608`
+
+Detector-level details are in:
+
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311/detector_distortion_comparison.csv`
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311/combined_raw_runs.csv`
+
+### What These Runs Proved
+
+1. The new `DeepfakeBench311` environment is operational on MPS for the current evaluation path.
+2. The optional import cleanup was sufficient to avoid installing `dlib`, `kornia`, `loralib`, `transformers`, `simplejson`, and other unrelated dependencies for this top-3 distortion benchmark.
+3. The matched-subset clean baseline path works for both source datasets.
+4. The orchestrator now produces directly comparable clean-vs-distorted CSV outputs for both mini datasets.

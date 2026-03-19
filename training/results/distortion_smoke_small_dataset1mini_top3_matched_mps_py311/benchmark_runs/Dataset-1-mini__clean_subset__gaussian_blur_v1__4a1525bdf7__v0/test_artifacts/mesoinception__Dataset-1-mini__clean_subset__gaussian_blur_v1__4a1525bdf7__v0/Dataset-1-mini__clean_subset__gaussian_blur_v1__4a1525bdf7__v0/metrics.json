@@ -1,0 +1,11 @@
+{
+  "dataset": "Dataset-1-mini__clean_subset__gaussian_blur_v1__4a1525bdf7__v0",
+  "num_samples": 100,
+  "metrics": {
+    "acc": 0.49,
+    "auc": 0.498,
+    "eer": 0.48,
+    "ap": 0.5222953761431295,
+    "video_auc": 0.498
+  }
+}

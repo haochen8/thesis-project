@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-03-19T15:03:04.018114",
+  "repo_root": "/Users/Hao/thesis-project",
+  "distortion_root": "/Users/Hao/thesis-project/distortionPipeline",
+  "experiment_yaml": "/Users/Hao/thesis-project/distortionPipeline/configs/experiments/champion_smoke_small.yaml",
+  "resolved_experiment_yaml": "/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311/work/resolved_experiment.yaml",
+  "recipes_dir": "/Users/Hao/thesis-project/distortionPipeline/configs/recipes",
+  "dataset_json_folder": "/Users/Hao/thesis-project/preprocessing/dataset_json",
+  "champions_json": "/Users/Hao/thesis-project/training/results/stage_c_existing_detectors/champions.json",
+  "detectors": [
+    "mesonet",
+    "mesoinception",
+    "xception"
+  ],
+  "source_datasets": [
+    "NVIDIA-dataset-mini"
+  ],
+  "split": "test",
+  "weights_root": "training/weights",
+  "weights_map": "",
+  "timeout_minutes": 20.0,
+  "evaluate_clean": true,
+  "clean_baseline_mode": "matched_subset",
+  "export_test_artifacts": true,
+  "respect_experiment_image_filters": true,
+  "disable_mps_fallback": false,
+  "dry_run": false
+}

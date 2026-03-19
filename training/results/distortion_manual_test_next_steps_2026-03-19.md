@@ -1,176 +1,75 @@
 # Distortion Integration Manual Test Steps
 
 Generated: `2026-03-19`
+Updated after the Python 3.11 MPS migration.
 
 ## Purpose
 
-These steps verify the new distortion-to-detector integration in increasing order of cost.
+These steps verify the current canonical distortion-to-detector workflow using the migrated MPS-capable environment.
 
 ## Preconditions
 
-- Conda env: `DeepfakeBench`
+- Conda env: `DeepfakeBench311`
 - Working directory: `/Users/Hao/thesis-project`
+- Run these commands from a normal terminal session on macOS. Inside the Codex sandbox, `mps_available` may appear false even when the environment is correct.
 
-## Step 0: Check whether MPS is currently available
-
-Run this first:
+## Step 0: Confirm MPS In `DeepfakeBench311`
 
 ```bash
 source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate DeepfakeBench
+conda activate DeepfakeBench311
 
 python - <<'PY'
-import torch
+import sys, platform, torch
+print('python', sys.version.split()[0])
 print('torch', torch.__version__)
+print('mac_ver', platform.mac_ver())
 print('mps_built', torch.backends.mps.is_built())
 print('mps_available', torch.backends.mps.is_available())
+print(torch.zeros(1, device='mps').device)
 PY
 ```
 
-Interpretation:
+Expected result:
 
-- If `mps_available` is `True`, use the full mini smoke steps below.
-- If `mps_available` is `False`, the benchmark will run on CPU. In that case, use the quickcheck and the small paired smoke step first.
-- Current observed state on `2026-03-19`: `torch 2.8.0`, `mps_built=True`, `mps_available=False`.
+- `python 3.11.15`
+- `torch 2.12.0.dev20260318`
+- `mps_built True`
+- `mps_available True`
+- final line prints `mps:0`
 
-## Step 1: Fast end-to-end quickcheck
+## Step 1: Verify The Benchmark Entry Point
 
-Use a tiny distortion run with one detector and no clean baseline comparison.
-Start with `xception` because it is the most predictable first validator in this codebase.
-
-Command:
+This reproduces the clean Xception mini test in the migrated environment.
 
 ```bash
 source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate DeepfakeBench
+conda activate DeepfakeBench311
 
-python /Users/Hao/thesis-project/training/distortion_champion_evaluation.py \
-  --source-datasets Dataset-1-mini \
-  --detectors xception \
-  --distortion-root /Users/Hao/thesis-project/distortionPipeline \
-  --experiment-yaml /Users/Hao/thesis-project/distortionPipeline/configs/experiments/champion_quickcheck.yaml \
-  --respect-experiment-image-filters \
-  --no-evaluate-clean \
-  --output-dir /Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception
+MPLCONFIGDIR=/tmp/mpl XDG_CACHE_HOME=/tmp/.cache \
+python /Users/Hao/thesis-project/training/test.py \
+  --detector_path /Users/Hao/thesis-project/training/config/detector/xception_cpu_mini.yaml \
+  --weights_path /Users/Hao/thesis-project/training/weights/xception_best.pth \
+  --test_dataset Dataset-1-mini \
+  --dataset_json_folder /Users/Hao/thesis-project/preprocessing/dataset_json
 ```
 
-What this should do:
+Expected result:
 
-1. Export `Dataset-1-mini` test manifest into distortion JSONL
-2. Generate 10 distortion jobs (5 real + 5 fake, one recipe)
-3. Write one distorted dataset manifest
-4. Run `xception` on that generated dataset
-5. Write benchmark and comparison artifacts
+- `===> Using device: mps`
+- `acc: 0.631`
+- `auc: 0.6656719999999999`
+- `eer: 0.392`
+- `ap: 0.7117617465412283`
+- `===> Test Done!`
 
-Files to check:
-
-- `/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/run_config.json`
-- `/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/dataset_index.csv`
-- `/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/generated_dataset_json/`
-- `/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/benchmark_runs/`
-- `/Users/Hao/thesis-project/training/results/distortion_quickcheck_dataset1mini_xception/combined_raw_runs.csv`
-
-Success criteria:
-
-- `generated_dataset_json` contains one `.json` file
-- `benchmark_runs` contains one dataset run folder
-- `combined_raw_runs.csv` contains `xception`
-- `status` is `success`
-
-## Step 2: Small paired smoke run
-
-Use a reduced paired run so clean vs distorted deltas are generated quickly even on CPU.
-
-Command:
+## Step 2: Run The Top-3 Matched-Subset Distortion Benchmark On `Dataset-1-mini`
 
 ```bash
 source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate DeepfakeBench
+conda activate DeepfakeBench311
 
-python /Users/Hao/thesis-project/training/distortion_champion_evaluation.py \
-  --source-datasets Dataset-1-mini \
-  --detectors xception \
-  --distortion-root /Users/Hao/thesis-project/distortionPipeline \
-  --experiment-yaml /Users/Hao/thesis-project/distortionPipeline/configs/experiments/champion_smoke_small.yaml \
-  --clean-baseline-mode matched_subset \
-  --respect-experiment-image-filters \
-  --output-dir /Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_xception_matched
-```
-
-What this should do:
-
-1. Generate a clean subset manifest that matches the sampled distortion jobs
-2. Generate one reduced distorted dataset with `50` real + `50` fake images
-3. Evaluate `xception` on the distorted dataset
-4. Evaluate `xception` on the matched clean subset
-5. Write clean-vs-distorted deltas
-
-Files to check:
-
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_xception_matched/evaluation_dataset_json/`
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_xception_matched/combined_raw_runs.csv`
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_xception_matched/detector_distortion_comparison.csv`
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_xception_matched/detector_distortion_summary.csv`
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_xception_matched/distortion_champion_report.md`
-
-Success criteria:
-
-- `combined_raw_runs.csv` contains one clean row and one distorted row for `xception`
-- the clean row dataset name contains `__clean_subset__`
-- `detector_distortion_comparison.csv` contains non-empty `clean_auc` and `delta_auc`
-- `prediction_artifacts_path` and `metrics_artifacts_path` are populated
-
-## Step 3: Meaningful mini-dataset smoke run
-
-Use the full `Dataset-1-mini` size for one distortion recipe so clean vs distorted comparison is valid.
-Keep `xception` for this first full clean-vs-distorted smoke run, then expand to the other champions.
-If `mps_available` is still `False`, expect this step to be much slower because both clean and distorted passes will run on CPU.
-
-Command:
-
-```bash
-source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate DeepfakeBench
-
-python /Users/Hao/thesis-project/training/distortion_champion_evaluation.py \
-  --source-datasets Dataset-1-mini \
-  --detectors xception \
-  --distortion-root /Users/Hao/thesis-project/distortionPipeline \
-  --experiment-yaml /Users/Hao/thesis-project/distortionPipeline/configs/experiments/champion_smoke_mini.yaml \
-  --respect-experiment-image-filters \
-  --output-dir /Users/Hao/thesis-project/training/results/distortion_smoke_dataset1mini_xception
-```
-
-What this should do:
-
-1. Evaluate clean `Dataset-1-mini`
-2. Generate one distorted dataset with the same sample count
-3. Evaluate `xception` on the distorted dataset
-4. Write clean-vs-distorted deltas
-
-Files to check:
-
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_dataset1mini_xception/evaluation_dataset_json/`
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_dataset1mini_xception/combined_raw_runs.csv`
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_dataset1mini_xception/detector_distortion_comparison.csv`
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_dataset1mini_xception/detector_distortion_summary.csv`
-- `/Users/Hao/thesis-project/training/results/distortion_smoke_dataset1mini_xception/distortion_champion_report.md`
-
-Success criteria:
-
-- `combined_raw_runs.csv` contains one clean row and one distorted row for `xception`
-- `detector_distortion_comparison.csv` contains non-empty `clean_auc` and `delta_auc`
-- `prediction_artifacts_path` and `metrics_artifacts_path` are populated
-
-## Step 4: Expand detector coverage
-
-After Step 2 succeeds, expand to the three chosen champions.
-If `mps_available` is still `False`, keep using the small matched-subset setup first:
-
-```bash
-source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate DeepfakeBench
-
+MPLCONFIGDIR=/tmp/mpl XDG_CACHE_HOME=/tmp/.cache \
 python /Users/Hao/thesis-project/training/distortion_champion_evaluation.py \
   --source-datasets Dataset-1-mini \
   --detectors mesonet mesoinception xception \
@@ -178,21 +77,75 @@ python /Users/Hao/thesis-project/training/distortion_champion_evaluation.py \
   --experiment-yaml /Users/Hao/thesis-project/distortionPipeline/configs/experiments/champion_smoke_small.yaml \
   --clean-baseline-mode matched_subset \
   --respect-experiment-image-filters \
-  --output-dir /Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched
+  --output-dir /Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched_mps_py311
 ```
 
-## Step 5: Move to NVIDIA mini
+Files to inspect:
 
-Repeat Step 2 with:
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched_mps_py311/combined_raw_runs.csv`
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched_mps_py311/detector_distortion_comparison.csv`
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched_mps_py311/detector_distortion_summary.csv`
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched_mps_py311/distortion_champion_report.md`
 
-- `--source-datasets NVIDIA-dataset-mini`
+Expected result summary:
 
-This verifies the same integration on the second dataset before any full-scale run.
+- all `6` runs succeed (`3` clean subset + `3` distorted)
+- all runs use `device=mps`
+- Gaussian blur matched-subset deltas:
+  - `mesonet`: `delta_auc=-0.0312`
+  - `mesoinception`: `delta_auc=+0.0276`
+  - `xception`: `delta_auc=-0.0616`
 
-## Recommended order
+## Step 3: Run The Same Matched-Subset Benchmark On `NVIDIA-dataset-mini`
 
-1. `champion_quickcheck.yaml`
-2. `champion_smoke_small.yaml` with one detector
-3. `champion_smoke_mini.yaml` with one detector
-4. `champion_smoke_mini.yaml` with all three champions
-5. `NVIDIA-dataset-mini`
+```bash
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate DeepfakeBench311
+
+MPLCONFIGDIR=/tmp/mpl XDG_CACHE_HOME=/tmp/.cache \
+python /Users/Hao/thesis-project/training/distortion_champion_evaluation.py \
+  --source-datasets NVIDIA-dataset-mini \
+  --detectors mesonet mesoinception xception \
+  --distortion-root /Users/Hao/thesis-project/distortionPipeline \
+  --experiment-yaml /Users/Hao/thesis-project/distortionPipeline/configs/experiments/champion_smoke_small.yaml \
+  --clean-baseline-mode matched_subset \
+  --respect-experiment-image-filters \
+  --output-dir /Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311
+```
+
+Files to inspect:
+
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311/combined_raw_runs.csv`
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311/detector_distortion_comparison.csv`
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311/detector_distortion_summary.csv`
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311/distortion_champion_report.md`
+
+Expected result summary:
+
+- all `6` runs succeed (`3` clean subset + `3` distorted)
+- all runs use `device=mps`
+- Gaussian blur matched-subset deltas:
+  - `mesonet`: `delta_auc=+0.0592`
+  - `mesoinception`: `delta_auc=-0.0864`
+  - `xception`: `delta_auc=-0.0608`
+
+## Step 4: Inspect Per-Detector Prediction Artifacts
+
+Each detector run writes per-sample outputs.
+
+Examples:
+
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_dataset1mini_top3_matched_mps_py311/benchmark_runs/Dataset-1-mini__gaussian_blur_v1__4a1525bdf7__v0/test_artifacts/xception__Dataset-1-mini__gaussian_blur_v1__4a1525bdf7__v0/Dataset-1-mini__gaussian_blur_v1__4a1525bdf7__v0/predictions.csv`
+- `/Users/Hao/thesis-project/training/results/distortion_smoke_small_nvidia_mini_top3_matched_mps_py311/benchmark_runs/NVIDIA-dataset-mini__gaussian_blur_v1__4a1525bdf7__v0/test_artifacts/mesonet__NVIDIA-dataset-mini__gaussian_blur_v1__4a1525bdf7__v0/NVIDIA-dataset-mini__gaussian_blur_v1__4a1525bdf7__v0/metrics.json`
+
+Use these to verify:
+
+- image-level probabilities were exported
+- the clean and distorted dataset names are different
+- the comparison CSVs were derived from structured artifacts rather than scraped logs
+
+## Recommended Next Expansion
+
+1. Add `jpeg`, `noise`, and `text_overlay` experiment YAMLs using the same matched-subset path.
+2. Reuse `DeepfakeBench311` for those runs.
+3. Keep the detector set fixed until distortion robustness ranking stabilizes.

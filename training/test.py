@@ -14,26 +14,14 @@ import yaml
 import pickle
 import re
 from tqdm import tqdm
-from copy import deepcopy
 from PIL import Image as pil_image
 from metrics.utils import get_test_metrics
 import torch
-import torch.nn as nn
-import torch.nn.parallel
 import torch.backends.cudnn as cudnn
-import torch.nn.functional as F
 import torch.utils.data
-import torch.optim as optim
 
 from dataset.abstract_dataset import DeepfakeAbstractBaseDataset
-from dataset.ff_blend import FFBlendDataset
-from dataset.fwa_blend import FWABlendDataset
-from dataset.pair_dataset import pairDataset
-
-from trainer.trainer import Trainer
 from detectors import DETECTOR
-from metrics.base_metrics_class import Recorder
-from collections import defaultdict
 
 import argparse
 from pathlib import Path
