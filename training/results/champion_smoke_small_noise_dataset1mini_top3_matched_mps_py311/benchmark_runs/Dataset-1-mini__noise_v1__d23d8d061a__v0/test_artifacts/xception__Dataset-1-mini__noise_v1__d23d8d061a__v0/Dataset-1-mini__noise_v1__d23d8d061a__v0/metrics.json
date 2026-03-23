@@ -1,0 +1,11 @@
+{
+  "dataset": "Dataset-1-mini__noise_v1__d23d8d061a__v0",
+  "num_samples": 100,
+  "metrics": {
+    "acc": 0.5,
+    "auc": 0.4411999999999999,
+    "eer": 0.54,
+    "ap": 0.5014457875202405,
+    "video_auc": 0.4411999999999999
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "dataset": "Dataset-1-mini__snapchat_text_overlay_v1__ddc9a26517__v0",
+  "num_samples": 100,
+  "metrics": {
+    "acc": 0.66,
+    "auc": 0.5768,
+    "eer": 0.46,
+    "ap": 0.6761806989934124,
+    "video_auc": 0.5768
+  }
+}

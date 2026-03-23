@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-03-23T13:33:33.785905",
+  "datasets": [
+    "Dataset-1-mini__noise_v1__d23d8d061a__v0"
+  ],
+  "scoring_formula": "0.55*AUC + 0.20*AP + 0.10*ACC - 0.15*EER - 0.08*runtime_norm - 0.12*auc_gap",
+  "champions": [
+    {
+      "rank": 1,
+      "detector_key": "mesonet",
+      "detector_name": "MesoNet",
+      "family": "naive",
+      "score": 0.5126731986759794,
+      "auc_mean": 0.7924,
+      "ap_mean": 0.7551495234162424,
+      "eer_mean": 0.3,
+      "acc_mean": 0.5,
+      "auc_gap": "",
+      "runtime_total_sec": 29.89
+    },
+    {
+      "rank": 2,
+      "detector_key": "mesoinception",
+      "detector_name": "MesoInception",
+      "family": "naive",
+      "score": 0.38960247993311237,
+      "auc_mean": 0.6184,
+      "ap_mean": 0.607412399665562,
+      "eer_mean": 0.38,
+      "acc_mean": 0.65,
+      "auc_gap": "",
+      "runtime_total_sec": 30.142
+    },
+    {
+      "rank": 3,
+      "detector_key": "xception",
+      "detector_name": "Xception",
+      "family": "naive",
+      "score": 0.31194915750404806,
+      "auc_mean": 0.4411999999999999,
+      "ap_mean": 0.5014457875202405,
+      "eer_mean": 0.54,
+      "acc_mean": 0.5,
+      "auc_gap": "",
+      "runtime_total_sec": 5.655
+    }
+  ],
+  "num_ranked_complete_detectors": 3
+}

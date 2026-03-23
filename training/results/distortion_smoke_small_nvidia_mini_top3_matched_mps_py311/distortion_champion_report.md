@@ -1,6 +1,6 @@
 # Distortion Champion Evaluation
 
-- Generated: `2026-03-19T15:05:20.800768`
+- Generated: `2026-03-23T13:45:01.168755`
 - Source datasets: `NVIDIA-dataset-mini`
 - Champion detectors: `mesonet, mesoinception, xception`
 - Distorted dataset manifests generated: `1`
@@ -14,7 +14,7 @@
 
 | Detector | Mean distorted AUC | Worst distorted AUC | Mean ΔAUC | Worst ΔAUC | Mean ΔAP | Mean ΔACC | Mean ΔEER | Runs |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| `mesonet` | 0.577600 | 0.577600 | 0.059200 | 0.059200 | 0.070831 | NA | -0.040000 | 1 |
+| `mesonet` | 0.577600 | 0.577600 | 0.059200 | 0.059200 | 0.070831 | 0.000000 | -0.040000 | 1 |
 | `xception` | 0.353200 | 0.353200 | -0.060800 | -0.060800 | -0.066190 | -0.080000 | 0.080000 | 1 |
 | `mesoinception` | 0.305600 | 0.305600 | -0.086400 | -0.086400 | -0.042645 | -0.170000 | 0.140000 | 1 |
 

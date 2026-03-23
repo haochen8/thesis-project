@@ -1,0 +1,612 @@
+{
+  "Dataset-1-mini__snapchat_text_overlay_v1__ddc9a26517__v0": {
+    "roop_Fake": {
+      "test": {
+        "000001": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000001__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000002": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000002__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000003": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000003__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000004": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000004__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000005": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000005__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000006": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000006__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000007": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000007__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000008": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000008__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000009": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000009__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000010": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000010__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000011": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000011__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000012": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000012__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000013": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000013__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000014": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000014__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000015": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000015__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000016": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000016__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000017": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000017__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000018": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000018__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000019": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000019__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000020": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000020__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000021": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000021__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000022": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000022__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000023": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000023__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000024": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000024__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000025": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000025__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000026": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000026__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000027": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000027__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000028": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000028__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000029": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000029__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000030": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000030__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000031": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000031__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000032": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000032__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000033": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000033__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000034": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000034__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000035": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000035__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000036": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000036__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000037": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000037__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000038": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000038__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000039": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000039__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000040": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000040__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000041": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000041__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000042": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000042__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000043": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000043__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000044": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000044__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000045": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000045__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000046": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000046__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000047": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000047__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000048": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000048__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000049": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000049__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000050": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Fake/000050__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Fake"
+        }
+      }
+    },
+    "roop_Real": {
+      "test": {
+        "000001": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000001__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000002": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000002__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000003": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000003__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000004": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000004__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000005": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000005__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000006": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000006__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000007": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000007__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000008": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000008__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000009": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000009__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000010": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000010__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000011": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000011__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000012": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000012__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000013": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000013__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000014": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000014__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000015": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000015__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000016": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000016__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000017": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000017__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000018": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000018__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000019": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000019__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000020": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000020__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000021": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000021__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000022": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000022__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000023": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000023__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000024": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000024__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000025": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000025__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000026": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000026__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000027": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000027__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000028": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000028__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000029": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000029__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000030": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000030__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000031": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000031__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000032": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000032__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000033": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000033__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000034": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000034__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000035": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000035__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000036": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000036__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000037": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000037__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000038": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000038__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000039": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000039__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000040": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000040__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000041": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000041__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000042": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000042__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000043": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000043__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000044": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000044__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000045": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000045__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000046": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000046__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000047": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000047__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000048": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000048__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000049": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000049__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000050": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_text_overlay_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/snapchat_text_overlay_v1/roop_Real/000050__snapchat_text_overlay_v1__ddc9a26517__v0.png"
+          ],
+          "label": "roop_Real"
+        }
+      }
+    }
+  }
+}

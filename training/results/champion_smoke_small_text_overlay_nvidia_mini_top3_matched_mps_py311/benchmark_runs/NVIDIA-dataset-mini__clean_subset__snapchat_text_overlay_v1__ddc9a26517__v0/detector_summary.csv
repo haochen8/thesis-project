@@ -1,0 +1,4 @@
+detector_key,detector_name,family,runs_expected,runs_success,complete,acc_mean,auc_mean,eer_mean,ap_mean,auc_gap,runtime_total_sec,runtime_norm,score,status_note
+xception,Xception,naive,1,1,1,0.52,0.414,0.56,0.47625402744732387,,5.714,0.0,0.2909508054894648,ok
+mesonet,MesoNet,naive,1,1,1,0.5,0.5184,0.48,0.5038912017072544,,30.315,1.0,0.28389824034145084,ok
+mesoinception,MesoInception,naive,1,1,1,0.5,0.392,0.5,0.43754934147453406,,30.217,0.9960164220966627,0.19842855452717378,ok

@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-03-23T13:34:40.488131",
+  "datasets": [
+    "Dataset-1-mini__clean_subset__snapchat_text_overlay_v1__ddc9a26517__v0"
+  ],
+  "scoring_formula": "0.55*AUC + 0.20*AP + 0.10*ACC - 0.15*EER - 0.08*runtime_norm - 0.12*auc_gap",
+  "champions": [
+    {
+      "rank": 1,
+      "detector_key": "xception",
+      "detector_name": "Xception",
+      "family": "naive",
+      "score": 0.5138869475142864,
+      "auc_mean": 0.6819999999999999,
+      "ap_mean": 0.6989347375714321,
+      "eer_mean": 0.4,
+      "acc_mean": 0.59,
+      "auc_gap": "",
+      "runtime_total_sec": 5.624
+    },
+    {
+      "rank": 2,
+      "detector_key": "mesonet",
+      "detector_name": "MesoNet",
+      "family": "naive",
+      "score": 0.45248341112715584,
+      "auc_mean": 0.7268,
+      "ap_mean": 0.6360072510701688,
+      "eer_mean": 0.3,
+      "acc_mean": 0.5,
+      "auc_gap": "",
+      "runtime_total_sec": 29.815
+    },
+    {
+      "rank": 3,
+      "detector_key": "mesoinception",
+      "detector_name": "MesoInception",
+      "family": "naive",
+      "score": 0.2753590752286259,
+      "auc_mean": 0.498,
+      "ap_mean": 0.5222953761431295,
+      "eer_mean": 0.48,
+      "acc_mean": 0.49,
+      "auc_gap": "",
+      "runtime_total_sec": 29.98
+    }
+  ],
+  "num_ranked_complete_detectors": 3
+}

@@ -1,0 +1,11 @@
+{
+  "dataset": "NVIDIA-dataset-mini__noise_v1__d23d8d061a__v0",
+  "num_samples": 100,
+  "metrics": {
+    "acc": 0.47,
+    "auc": 0.40360000000000007,
+    "eer": 0.5,
+    "ap": 0.46492642150207675,
+    "video_auc": 0.40360000000000007
+  }
+}

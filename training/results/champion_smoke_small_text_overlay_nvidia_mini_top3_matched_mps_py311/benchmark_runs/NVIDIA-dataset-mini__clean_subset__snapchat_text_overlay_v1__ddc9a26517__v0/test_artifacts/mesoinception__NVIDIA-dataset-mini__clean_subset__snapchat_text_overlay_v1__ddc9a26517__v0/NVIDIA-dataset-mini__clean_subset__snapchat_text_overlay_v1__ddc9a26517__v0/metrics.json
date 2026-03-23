@@ -1,0 +1,11 @@
+{
+  "dataset": "NVIDIA-dataset-mini__clean_subset__snapchat_text_overlay_v1__ddc9a26517__v0",
+  "num_samples": 100,
+  "metrics": {
+    "acc": 0.5,
+    "auc": 0.392,
+    "eer": 0.5,
+    "ap": 0.43754934147453406,
+    "video_auc": 0.392
+  }
+}

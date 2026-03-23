@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-03-23T13:40:56.079134",
+  "datasets": [
+    "NVIDIA-dataset-mini__noise_v1__d23d8d061a__v0"
+  ],
+  "scoring_formula": "0.55*AUC + 0.20*AP + 0.10*ACC - 0.15*EER - 0.08*runtime_norm - 0.12*auc_gap",
+  "champions": [
+    {
+      "rank": 1,
+      "detector_key": "xception",
+      "detector_name": "Xception",
+      "family": "naive",
+      "score": 0.3073558147677925,
+      "auc_mean": 0.4476,
+      "ap_mean": 0.47587907383896266,
+      "eer_mean": 0.56,
+      "acc_mean": 0.5,
+      "auc_gap": "",
+      "runtime_total_sec": 6.37
+    },
+    {
+      "rank": 2,
+      "detector_key": "mesonet",
+      "detector_name": "MesoNet",
+      "family": "naive",
+      "score": 0.30570272308445406,
+      "auc_mean": 0.5392000000000001,
+      "ap_mean": 0.5405633148210675,
+      "eer_mean": 0.46,
+      "acc_mean": 0.5,
+      "auc_gap": "",
+      "runtime_total_sec": 30.313
+    },
+    {
+      "rank": 3,
+      "detector_key": "mesoinception",
+      "detector_name": "MesoInception",
+      "family": "naive",
+      "score": 0.2069652843004154,
+      "auc_mean": 0.40360000000000007,
+      "ap_mean": 0.46492642150207675,
+      "eer_mean": 0.5,
+      "acc_mean": 0.47,
+      "auc_gap": "",
+      "runtime_total_sec": 30.322
+    }
+  ],
+  "num_ranked_complete_detectors": 3
+}

@@ -1,0 +1,11 @@
+{
+  "dataset": "Dataset-1-mini__jpeg_compress_v1__074f6a9a12__v0",
+  "num_samples": 100,
+  "metrics": {
+    "acc": 0.5,
+    "auc": 0.5312,
+    "eer": 0.46,
+    "ap": 0.5210869866746929,
+    "video_auc": 0.5312
+  }
+}

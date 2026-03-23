@@ -1,0 +1,612 @@
+{
+  "Dataset-1-mini__clean_subset__snapchat_text_overlay_v1__ddc9a26517__v0": {
+    "roop_Fake": {
+      "test": {
+        "000001": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000001.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000002": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000002.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000003": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000003.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000004": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000004.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000005": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000005.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000006": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000006.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000007": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000007.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000008": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000008.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000009": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000009.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000010": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000010.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000011": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000011.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000012": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000012.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000013": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000013.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000014": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000014.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000015": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000015.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000016": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000016.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000017": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000017.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000018": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000018.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000019": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000019.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000020": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000020.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000021": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000021.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000022": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000022.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000023": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000023.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000024": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000024.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000025": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000025.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000026": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000026.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000027": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000027.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000028": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000028.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000029": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000029.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000030": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000030.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000031": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000031.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000032": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000032.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000033": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000033.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000034": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000034.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000035": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000035.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000036": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000036.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000037": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000037.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000038": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000038.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000039": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000039.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000040": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000040.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000041": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000041.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000042": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000042.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000043": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000043.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000044": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000044.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000045": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000045.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000046": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000046.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000047": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000047.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000048": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000048.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000049": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000049.jpg"
+          ],
+          "label": "roop_Fake"
+        },
+        "000050": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/AI-Generated Images/000050.jpg"
+          ],
+          "label": "roop_Fake"
+        }
+      }
+    },
+    "roop_Real": {
+      "test": {
+        "000001": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000001.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000002": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000002.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000003": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000003.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000004": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000004.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000005": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000005.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000006": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000006.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000007": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000007.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000008": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000008.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000009": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000009.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000010": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000010.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000011": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000011.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000012": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000012.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000013": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000013.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000014": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000014.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000015": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000015.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000016": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000016.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000017": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000017.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000018": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000018.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000019": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000019.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000020": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000020.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000021": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000021.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000022": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000022.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000023": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000023.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000024": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000024.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000025": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000025.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000026": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000026.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000027": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000027.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000028": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000028.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000029": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000029.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000030": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000030.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000031": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000031.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000032": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000032.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000033": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000033.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000034": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000034.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000035": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000035.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000036": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000036.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000037": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000037.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000038": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000038.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000039": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000039.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000040": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000040.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000041": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000041.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000042": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000042.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000043": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000043.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000044": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000044.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000045": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000045.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000046": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000046.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000047": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000047.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000048": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000048.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000049": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000049.jpg"
+          ],
+          "label": "roop_Real"
+        },
+        "000050": {
+          "frames": [
+            "/Users/Hao/thesis-project/datasets/Dataset-1/Real Images/000050.jpg"
+          ],
+          "label": "roop_Real"
+        }
+      }
+    }
+  }
+}

@@ -39,6 +39,10 @@ def mean(values: Iterable[Optional[float]]) -> Optional[float]:
     return sum(numeric) / len(numeric)
 
 
+def blank_if_none(value: Optional[float]) -> object:
+    return "" if value is None else value
+
+
 def format_num(value: Optional[float], digits: int = 6) -> str:
     if value is None:
         return "NA"
@@ -256,13 +260,13 @@ def build_detector_summary(comparison_rows: List[Dict[str, object]]) -> List[Dic
                 "detector_name": detector_name,
                 "family": family,
                 "distortion_runs": len(rows),
-                "mean_auc": mean(distorted_auc) or "",
+                "mean_auc": blank_if_none(mean(distorted_auc)),
                 "worst_auc": min([value for value in distorted_auc if value is not None], default=""),
-                "mean_delta_auc": mean(delta_auc) or "",
+                "mean_delta_auc": blank_if_none(mean(delta_auc)),
                 "worst_delta_auc": min([value for value in delta_auc if value is not None], default=""),
-                "mean_delta_ap": mean(delta_ap) or "",
-                "mean_delta_acc": mean(delta_acc) or "",
-                "mean_delta_eer": mean(delta_eer) or "",
+                "mean_delta_ap": blank_if_none(mean(delta_ap)),
+                "mean_delta_acc": blank_if_none(mean(delta_acc)),
+                "mean_delta_eer": blank_if_none(mean(delta_eer)),
             }
         )
     summary_rows.sort(

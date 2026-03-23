@@ -1,0 +1,612 @@
+{
+  "Dataset-1-mini__jpeg_compress_v1__074f6a9a12__v0": {
+    "roop_Fake": {
+      "test": {
+        "000001": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000001__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000002": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000002__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000003": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000003__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000004": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000004__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000005": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000005__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000006": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000006__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000007": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000007__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000008": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000008__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000009": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000009__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000010": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000010__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000011": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000011__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000012": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000012__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000013": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000013__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000014": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000014__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000015": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000015__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000016": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000016__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000017": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000017__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000018": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000018__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000019": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000019__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000020": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000020__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000021": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000021__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000022": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000022__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000023": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000023__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000024": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000024__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000025": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000025__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000026": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000026__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000027": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000027__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000028": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000028__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000029": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000029__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000030": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000030__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000031": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000031__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000032": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000032__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000033": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000033__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000034": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000034__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000035": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000035__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000036": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000036__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000037": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000037__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000038": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000038__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000039": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000039__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000040": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000040__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000041": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000041__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000042": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000042__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000043": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000043__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000044": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000044__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000045": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000045__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000046": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000046__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000047": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000047__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000048": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000048__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000049": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000049__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        },
+        "000050": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Fake/000050__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Fake"
+        }
+      }
+    },
+    "roop_Real": {
+      "test": {
+        "000001": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000001__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000002": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000002__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000003": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000003__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000004": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000004__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000005": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000005__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000006": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000006__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000007": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000007__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000008": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000008__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000009": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000009__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000010": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000010__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000011": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000011__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000012": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000012__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000013": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000013__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000014": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000014__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000015": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000015__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000016": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000016__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000017": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000017__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000018": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000018__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000019": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000019__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000020": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000020__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000021": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000021__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000022": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000022__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000023": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000023__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000024": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000024__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000025": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000025__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000026": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000026__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000027": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000027__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000028": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000028__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000029": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000029__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000030": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000030__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000031": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000031__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000032": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000032__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000033": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000033__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000034": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000034__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000035": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000035__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000036": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000036__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000037": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000037__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000038": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000038__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000039": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000039__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000040": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000040__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000041": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000041__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000042": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000042__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000043": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000043__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000044": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000044__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000045": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000045__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000046": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000046__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000047": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000047__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000048": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000048__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000049": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000049__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        },
+        "000050": {
+          "frames": [
+            "/Users/Hao/thesis-project/training/results/champion_smoke_small_jpeg_dataset1mini_top3_matched_mps_py311/work/distorted_outputs/Dataset-1-mini/jpeg_compress_v1/roop_Real/000050__jpeg_compress_v1__074f6a9a12__v0.png"
+          ],
+          "label": "roop_Real"
+        }
+      }
+    }
+  }
+}

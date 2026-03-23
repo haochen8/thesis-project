@@ -1,0 +1,8 @@
+global_seed: 12345
+variants: 1
+recipes:
+  - recipe_id: jpeg_compress_v1
+
+images:
+  include_labels: ["roop_Real", "roop_Fake"]
+  max_images_per_label: 50
