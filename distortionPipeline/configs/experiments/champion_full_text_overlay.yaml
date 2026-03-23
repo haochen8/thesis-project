@@ -1,0 +1,4 @@
+global_seed: 12345
+variants: 1
+recipes:
+  - recipe_id: snapchat_text_overlay_v1

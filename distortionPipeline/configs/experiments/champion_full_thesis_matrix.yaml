@@ -1,0 +1,7 @@
+global_seed: 12345
+variants: 1
+recipes:
+  - recipe_id: gaussian_blur_v1
+  - recipe_id: jpeg_compress_v1
+  - recipe_id: noise_v1
+  - recipe_id: snapchat_text_overlay_v1
