@@ -373,6 +373,18 @@ def main() -> int:
     parser.add_argument("--export-test-artifacts", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--respect-experiment-image-filters", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--disable-mps-fallback", action="store_true")
+    parser.add_argument(
+        "--prepare-only",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Generate distorted datasets and evaluation manifests, but skip detector benchmarks.",
+    )
+    parser.add_argument(
+        "--benchmark-only",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Reuse an existing prepared output directory and run only detector benchmarks/report aggregation.",
+    )
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -410,21 +422,35 @@ def main() -> int:
     generated_dataset_json_dir.mkdir(parents=True, exist_ok=True)
     evaluation_dataset_json_dir.mkdir(parents=True, exist_ok=True)
     benchmark_runs_dir.mkdir(parents=True, exist_ok=True)
-
-    sys.path.insert(0, str(distortion_root))
-    from src.pipeline.manifest_adapter import (  # type: ignore
-        augmented_manifest_to_clean_subset_datasets,
-        augmented_manifest_to_deepfakebench_datasets,
-        deepfakebench_dataset_json_to_jsonl,
-        write_dataset_index_csv,
-    )
-
     resolved_experiment_path = work_dir / "resolved_experiment.yaml"
-    resolved_experiment = resolve_experiment_yaml(
-        experiment_yaml,
-        resolved_experiment_path,
-        respect_image_filters=args.respect_experiment_image_filters,
-    )
+
+    if args.prepare_only and args.benchmark_only:
+        raise ValueError("--prepare-only and --benchmark-only cannot be combined")
+
+    if args.benchmark_only:
+        dataset_index_csv = output_dir / "dataset_index.csv"
+        if not dataset_index_csv.exists():
+            raise FileNotFoundError(f"prepared dataset index not found: {dataset_index_csv}")
+        if not resolved_experiment_path.exists():
+            raise FileNotFoundError(f"prepared resolved experiment not found: {resolved_experiment_path}")
+        dataset_rows = read_csv_rows(dataset_index_csv)
+        resolved_experiment = yaml.safe_load(resolved_experiment_path.read_text(encoding="utf-8")) or {}
+        generated_rows: List[Dict[str, object]] = []
+        clean_subset_rows: List[Dict[str, object]] = []
+    else:
+        sys.path.insert(0, str(distortion_root))
+        from src.pipeline.manifest_adapter import (  # type: ignore
+            augmented_manifest_to_clean_subset_datasets,
+            augmented_manifest_to_deepfakebench_datasets,
+            deepfakebench_dataset_json_to_jsonl,
+            write_dataset_index_csv,
+        )
+
+        resolved_experiment = resolve_experiment_yaml(
+            experiment_yaml,
+            resolved_experiment_path,
+            respect_image_filters=args.respect_experiment_image_filters,
+        )
 
     run_config = {
         "generated_at": datetime.now().isoformat(),
@@ -446,140 +472,162 @@ def main() -> int:
         "export_test_artifacts": args.export_test_artifacts,
         "respect_experiment_image_filters": args.respect_experiment_image_filters,
         "disable_mps_fallback": args.disable_mps_fallback,
+        "prepare_only": args.prepare_only,
+        "benchmark_only": args.benchmark_only,
         "dry_run": args.dry_run,
     }
     (output_dir / "run_config.json").write_text(json.dumps(run_config, indent=2), encoding="utf-8")
-
-    generated_rows: List[Dict[str, object]] = []
-    clean_subset_rows: List[Dict[str, object]] = []
     env = os.environ.copy()
     env.setdefault("MPLCONFIGDIR", "/tmp/mpl")
     env.setdefault("XDG_CACHE_HOME", "/tmp/.cache")
 
-    for source_dataset in source_datasets:
-        source_manifest = dataset_json_folder / f"{source_dataset}.json"
-        if not source_manifest.exists():
-            raise FileNotFoundError(f"source dataset manifest not found: {source_manifest}")
-        export_jsonl = work_dir / "source_jsonl" / f"{sanitize_name(source_dataset)}__{args.split}.jsonl"
-        export_jsonl.parent.mkdir(parents=True, exist_ok=True)
-        deepfakebench_dataset_json_to_jsonl(
-            source_manifest,
-            export_jsonl,
-            dataset_name=source_dataset,
-            splits=(args.split,),
-        )
+    if not args.benchmark_only:
+        for source_dataset in source_datasets:
+            source_manifest = dataset_json_folder / f"{source_dataset}.json"
+            if not source_manifest.exists():
+                raise FileNotFoundError(f"source dataset manifest not found: {source_manifest}")
+            export_jsonl = work_dir / "source_jsonl" / f"{sanitize_name(source_dataset)}__{args.split}.jsonl"
+            export_jsonl.parent.mkdir(parents=True, exist_ok=True)
+            deepfakebench_dataset_json_to_jsonl(
+                source_manifest,
+                export_jsonl,
+                dataset_name=source_dataset,
+                splits=(args.split,),
+            )
 
-        jobs_jsonl = work_dir / "jobs" / f"{sanitize_name(source_dataset)}.jsonl"
-        augmented_jsonl = work_dir / "augmented" / f"{sanitize_name(source_dataset)}.jsonl"
-        cache_dir = work_dir / "cache" / sanitize_name(source_dataset)
-        distorted_out_dir = work_dir / "distorted_outputs" / sanitize_name(source_dataset)
+            jobs_jsonl = work_dir / "jobs" / f"{sanitize_name(source_dataset)}.jsonl"
+            augmented_jsonl = work_dir / "augmented" / f"{sanitize_name(source_dataset)}.jsonl"
+            cache_dir = work_dir / "cache" / sanitize_name(source_dataset)
+            distorted_out_dir = work_dir / "distorted_outputs" / sanitize_name(source_dataset)
 
-        generate_cmd = [
-            args.python_bin,
-            "-m",
-            "scripts.generate_manifest",
-            "--dataset_jsonl",
-            str(export_jsonl),
-            "--recipes_dir",
-            str(recipes_dir),
-            "--experiment_yaml",
-            str(resolved_experiment_path),
-            "--out",
-            str(jobs_jsonl),
-        ]
-        run_command(
-            generate_cmd,
-            cwd=distortion_root,
-            log_path=orchestrator_logs / f"generate_manifest__{sanitize_name(source_dataset)}.log",
-            env=env,
-            dry_run=args.dry_run,
-        )
+            generate_cmd = [
+                args.python_bin,
+                "-m",
+                "scripts.generate_manifest",
+                "--dataset_jsonl",
+                str(export_jsonl),
+                "--recipes_dir",
+                str(recipes_dir),
+                "--experiment_yaml",
+                str(resolved_experiment_path),
+                "--out",
+                str(jobs_jsonl),
+            ]
+            run_command(
+                generate_cmd,
+                cwd=distortion_root,
+                log_path=orchestrator_logs / f"generate_manifest__{sanitize_name(source_dataset)}.log",
+                env=env,
+                dry_run=args.dry_run,
+            )
 
-        run_distortions_cmd = [
-            args.python_bin,
-            "-m",
-            "scripts.run_distortions",
-            "--manifest",
-            str(jobs_jsonl),
-            "--cache_dir",
-            str(cache_dir),
-            "--out_dir",
-            str(distorted_out_dir),
-            "--write_augmented_manifest",
-            str(augmented_jsonl),
-        ]
-        run_command(
-            run_distortions_cmd,
-            cwd=distortion_root,
-            log_path=orchestrator_logs / f"run_distortions__{sanitize_name(source_dataset)}.log",
-            env=env,
-            dry_run=args.dry_run,
-        )
+            run_distortions_cmd = [
+                args.python_bin,
+                "-m",
+                "scripts.run_distortions",
+                "--manifest",
+                str(jobs_jsonl),
+                "--cache_dir",
+                str(cache_dir),
+                "--out_dir",
+                str(distorted_out_dir),
+                "--write_augmented_manifest",
+                str(augmented_jsonl),
+            ]
+            run_command(
+                run_distortions_cmd,
+                cwd=distortion_root,
+                log_path=orchestrator_logs / f"run_distortions__{sanitize_name(source_dataset)}.log",
+                env=env,
+                dry_run=args.dry_run,
+            )
 
-        if args.dry_run:
-            continue
+            if args.dry_run:
+                continue
 
-        rows = augmented_manifest_to_deepfakebench_datasets(augmented_jsonl, generated_dataset_json_dir)
-        for row in rows:
-            row["source_manifest"] = str(source_manifest.resolve())
-            row["source_jsonl"] = str(export_jsonl.resolve())
-            row["jobs_jsonl"] = str(jobs_jsonl.resolve())
-            row["augmented_manifest"] = str(augmented_jsonl.resolve())
-            row["distorted_output_dir"] = str(distorted_out_dir.resolve())
-        generated_rows.extend(rows)
-        if args.evaluate_clean and args.clean_baseline_mode == "matched_subset":
-            subset_rows = augmented_manifest_to_clean_subset_datasets(augmented_jsonl, generated_dataset_json_dir)
-            for row in subset_rows:
+            rows = augmented_manifest_to_deepfakebench_datasets(augmented_jsonl, generated_dataset_json_dir)
+            for row in rows:
                 row["source_manifest"] = str(source_manifest.resolve())
                 row["source_jsonl"] = str(export_jsonl.resolve())
                 row["jobs_jsonl"] = str(jobs_jsonl.resolve())
                 row["augmented_manifest"] = str(augmented_jsonl.resolve())
-                row["distorted_output_dir"] = ""
-            clean_subset_rows.extend(subset_rows)
+                row["distorted_output_dir"] = str(distorted_out_dir.resolve())
+            generated_rows.extend(rows)
+            if args.evaluate_clean and args.clean_baseline_mode == "matched_subset":
+                subset_rows = augmented_manifest_to_clean_subset_datasets(augmented_jsonl, generated_dataset_json_dir)
+                for row in subset_rows:
+                    row["source_manifest"] = str(source_manifest.resolve())
+                    row["source_jsonl"] = str(export_jsonl.resolve())
+                    row["jobs_jsonl"] = str(jobs_jsonl.resolve())
+                    row["augmented_manifest"] = str(augmented_jsonl.resolve())
+                    row["distorted_output_dir"] = ""
+                clean_subset_rows.extend(subset_rows)
 
-    dataset_rows = build_dataset_index_rows(
-        source_datasets,
-        generated_rows,
-        dataset_json_folder,
-        include_clean=args.evaluate_clean,
-        clean_rows=clean_subset_rows if args.clean_baseline_mode == "matched_subset" else None,
-    )
-    dataset_index_csv = output_dir / "dataset_index.csv"
-    if dataset_rows:
-        dataset_fieldnames = [
-            "dataset_name",
-            "condition",
-            "comparison_group",
-            "source_dataset_name",
-            "recipe_id",
-            "recipe_instance_id",
-            "recipe_label",
-            "variant",
-            "manifest_path",
-            "input_jsonl",
-            "source_manifest",
-            "source_jsonl",
-            "jobs_jsonl",
-            "augmented_manifest",
-            "distorted_output_dir",
-        ]
-        write_csv(dataset_index_csv, dataset_rows, dataset_fieldnames)
-        # Also emit the compact distortion-only index used by the adapter layer.
-        if generated_rows:
-            write_dataset_index_csv(output_dir / "generated_dataset_index.csv", generated_rows)
+        dataset_rows = build_dataset_index_rows(
+            source_datasets,
+            generated_rows,
+            dataset_json_folder,
+            include_clean=args.evaluate_clean,
+            clean_rows=clean_subset_rows if args.clean_baseline_mode == "matched_subset" else None,
+        )
+        dataset_index_csv = output_dir / "dataset_index.csv"
+        if dataset_rows:
+            dataset_fieldnames = [
+                "dataset_name",
+                "condition",
+                "comparison_group",
+                "source_dataset_name",
+                "recipe_id",
+                "recipe_instance_id",
+                "recipe_label",
+                "variant",
+                "manifest_path",
+                "input_jsonl",
+                "source_manifest",
+                "source_jsonl",
+                "jobs_jsonl",
+                "augmented_manifest",
+                "distorted_output_dir",
+            ]
+            write_csv(dataset_index_csv, dataset_rows, dataset_fieldnames)
+            # Also emit the compact distortion-only index used by the adapter layer.
+            if generated_rows:
+                write_dataset_index_csv(output_dir / "generated_dataset_index.csv", generated_rows)
+        else:
+            dataset_index_csv.write_text("", encoding="utf-8")
+
+        if args.clean_baseline_mode == "full":
+            for source_dataset in source_datasets:
+                source_manifest = dataset_json_folder / f"{source_dataset}.json"
+                if source_manifest.exists():
+                    shutil.copyfile(source_manifest, evaluation_dataset_json_dir / source_manifest.name)
+        for row in generated_rows + clean_subset_rows:
+            manifest_path = row.get("manifest_path")
+            if manifest_path:
+                src = Path(str(manifest_path))
+                shutil.copyfile(src, evaluation_dataset_json_dir / src.name)
     else:
-        dataset_index_csv.write_text("", encoding="utf-8")
+        dataset_index_csv = output_dir / "dataset_index.csv"
 
-    if args.clean_baseline_mode == "full":
-        for source_dataset in source_datasets:
-            source_manifest = dataset_json_folder / f"{source_dataset}.json"
-            if source_manifest.exists():
-                shutil.copyfile(source_manifest, evaluation_dataset_json_dir / source_manifest.name)
-    for row in generated_rows + clean_subset_rows:
-        manifest_path = row.get("manifest_path")
-        if manifest_path:
-            src = Path(str(manifest_path))
-            shutil.copyfile(src, evaluation_dataset_json_dir / src.name)
+    if args.prepare_only and not args.dry_run:
+        report_md = output_dir / "distortion_prepare_report.md"
+        lines = [
+            "# Distortion Champion Preparation",
+            "",
+            f"- Generated at: `{datetime.now().isoformat()}`",
+            f"- Source datasets: `{', '.join(source_datasets)}`",
+            f"- Detectors queued later: `{', '.join(detectors)}`",
+            f"- Prepared manifests: `{len(dataset_rows)}`",
+            f"- Dataset index: `{dataset_index_csv}`",
+            f"- Evaluation dataset folder: `{evaluation_dataset_json_dir}`",
+            "",
+            "Benchmark execution was intentionally skipped via `--prepare-only`.",
+        ]
+        report_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        print(f"[done] output_dir={output_dir}")
+        print(f"[done] dataset_index={dataset_index_csv}")
+        print(f"[done] prepare_report={report_md}")
+        return 0
 
     all_raw_rows: List[Dict[str, object]] = []
     benchmark_script = repo_root / "training" / "spatial_champion_benchmark.py"
