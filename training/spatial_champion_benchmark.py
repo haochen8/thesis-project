@@ -105,6 +105,14 @@ def safe_float(value: Optional[str]) -> Optional[float]:
     return parsed
 
 
+def ensure_text_output(value: object) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, bytes):
+        return value.decode("utf-8", errors="replace")
+    return str(value)
+
+
 def load_weights_map(path: Optional[Path]) -> Dict[str, str]:
     if path is None:
         return {}
@@ -476,9 +484,9 @@ def main() -> int:
                         row["status_detail"] = "nonzero_exit_or_metrics_missing"
             except subprocess.TimeoutExpired as exc:
                 elapsed = time.perf_counter() - t0
-                stdout = exc.stdout or ""
-                stderr = exc.stderr or ""
-                combined_output = (stdout or "") + ("\n" if stdout and stderr else "") + (stderr or "")
+                stdout = ensure_text_output(exc.stdout)
+                stderr = ensure_text_output(exc.stderr)
+                combined_output = stdout + ("\n" if stdout and stderr else "") + stderr
                 log_path.write_text(combined_output)
 
                 row["status"] = "timeout"

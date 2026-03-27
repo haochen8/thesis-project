@@ -423,6 +423,8 @@ def main() -> int:
     evaluation_dataset_json_dir.mkdir(parents=True, exist_ok=True)
     benchmark_runs_dir.mkdir(parents=True, exist_ok=True)
     resolved_experiment_path = work_dir / "resolved_experiment.yaml"
+    generated_rows: List[Dict[str, object]] = []
+    clean_subset_rows: List[Dict[str, object]] = []
 
     if args.prepare_only and args.benchmark_only:
         raise ValueError("--prepare-only and --benchmark-only cannot be combined")
@@ -435,8 +437,6 @@ def main() -> int:
             raise FileNotFoundError(f"prepared resolved experiment not found: {resolved_experiment_path}")
         dataset_rows = read_csv_rows(dataset_index_csv)
         resolved_experiment = yaml.safe_load(resolved_experiment_path.read_text(encoding="utf-8")) or {}
-        generated_rows: List[Dict[str, object]] = []
-        clean_subset_rows: List[Dict[str, object]] = []
     else:
         sys.path.insert(0, str(distortion_root))
         from src.pipeline.manifest_adapter import (  # type: ignore

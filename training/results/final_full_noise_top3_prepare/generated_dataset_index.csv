@@ -1,0 +1,3 @@
+dataset_name,source_dataset_name,recipe_id,recipe_instance_id,recipe_label,variant,manifest_path,input_jsonl
+Dataset-1__noise_v1__d23d8d061a__v0,Dataset-1,noise_v1,noise_v1__d23d8d061a,noise,0,/Users/Hao/thesis-project/training/results/final_full_noise_top3_prepare/generated_dataset_json/Dataset-1__noise_v1__d23d8d061a__v0.json,/Users/Hao/thesis-project/training/results/final_full_noise_top3_prepare/work/augmented/Dataset-1.jsonl
+NVIDIA-dataset__noise_v1__d23d8d061a__v0,NVIDIA-dataset,noise_v1,noise_v1__d23d8d061a,noise,0,/Users/Hao/thesis-project/training/results/final_full_noise_top3_prepare/generated_dataset_json/NVIDIA-dataset__noise_v1__d23d8d061a__v0.json,/Users/Hao/thesis-project/training/results/final_full_noise_top3_prepare/work/augmented/NVIDIA-dataset.jsonl

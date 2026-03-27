@@ -23,5 +23,45 @@
 *.tar.gz
 *.ipynb_checkpoints
 *.DS_Store
-/work/cache
-/training/results
+
+# Thesis result hygiene:
+# - keep final summary artifacts
+# - ignore heavy/generated experiment internals
+/training/results/**/work/
+/training/results/**/benchmark_runs/
+/training/results/**/benchmark_runs_failed_attempt_*/
+/training/results/**/evaluation_dataset_json/
+/training/results/**/generated_dataset_json/
+/training/results/**/orchestrator_logs/
+/training/results/**/logs/
+/training/results/**/test_artifacts/
+
+# Exclude smoke, quickcheck, and dry-run result directories entirely.
+/training/results/champion_smoke_small_*/
+/training/results/distortion_quickcheck_*/
+/training/results/distortion_smoke_*/
+/training/results/spatial_champions_dryrun*/
+/training/results/spatial_champions_full/
+/training/results/spatial_champions_smoke/
+/training/results/stage_a_spatial/
+/training/results/stage_b_*/
+
+# Keep only the thesis-relevant staged/final result directories.
+!/training/results/stage_c_existing_detectors/
+!/training/results/final_full_gaussian_blur_top3/
+!/training/results/final_full_jpeg_top3/
+!/training/results/final_full_noise_top3_prepare/
+/training/results/final_full_text_overlay_top3/
+!/training/results/final_full_text_overlay_top3_retry1/
+!/training/results/final_full_thesis_matrix_top3/
+
+# Keep selected documentation artifacts used in the thesis/reporting.
+!/training/results/stage_A_to_C_documentation.md
+!/training/results/distortion_detector_integration_visual_walkthrough_2026-03-24.md
+!/training/results/distortion_champion_integration_2026-03-18.md
+
+# Exclude intermediate retry/planning notes from the git payload.
+/training/results/distortion_full_run_freeze_2026-03-23.md
+/training/results/distortion_parallel_prep_2026-03-23.md
+/training/results/full_thesis_matrix_retry_note_2026-03-24.md
+/training/results/text_overlay_retry_note_2026-03-24.md

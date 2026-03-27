@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-03-23T13:53:25.982090",
+  "repo_root": "/Users/Hao/thesis-project",
+  "distortion_root": "/Users/Hao/thesis-project/distortionPipeline",
+  "experiment_yaml": "/Users/Hao/thesis-project/distortionPipeline/configs/experiments/champion_full_gaussian_blur.yaml",
+  "resolved_experiment_yaml": "/Users/Hao/thesis-project/training/results/final_full_gaussian_blur_top3/work/resolved_experiment.yaml",
+  "recipes_dir": "/Users/Hao/thesis-project/distortionPipeline/configs/recipes",
+  "dataset_json_folder": "/Users/Hao/thesis-project/preprocessing/dataset_json",
+  "champions_json": "/Users/Hao/thesis-project/training/results/stage_c_existing_detectors/champions.json",
+  "detectors": [
+    "mesonet",
+    "mesoinception",
+    "xception"
+  ],
+  "source_datasets": [
+    "Dataset-1",
+    "NVIDIA-dataset"
+  ],
+  "split": "test",
+  "weights_root": "training/weights",
+  "weights_map": "",
+  "timeout_minutes": 20.0,
+  "evaluate_clean": true,
+  "clean_baseline_mode": "full",
+  "export_test_artifacts": true,
+  "respect_experiment_image_filters": false,
+  "disable_mps_fallback": false,
+  "dry_run": false
+}
