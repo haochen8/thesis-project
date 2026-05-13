@@ -79,7 +79,11 @@ pip install -r requirements.txt
 ```
 
 See [distortionPipeline/README.md](distortionPipeline/README.md) for the full distortion
-pipeline workflow.
+pipeline workflow. The distortion system is also maintained as a standalone project at
+[litmas/distortionPipeline](https://github.com/litmas/distortionPipeline). It provides the
+deterministic recipe-based image distortion tooling used here to generate controlled
+robustness treatments such as compression, blur, noise, resizing, color filters, and
+social-media-style text/UI overlays.
 
 ## Dataset Manifests
 
@@ -140,6 +144,12 @@ This writes artifacts such as:
 
 More implementation notes are in
 [training/results/distortion_champion_integration_2026-03-18.md](training/results/distortion_champion_integration_2026-03-18.md).
+
+The distortion generation component is based on
+[litmas/distortionPipeline](https://github.com/litmas/distortionPipeline), a small
+config-driven pipeline for converting image datasets into JSONL manifests, expanding
+distortion recipes into reproducible jobs, applying the transformations, and writing
+augmented manifests that can be bridged back into DeepfakeBench-style dataset JSON files.
 
 ## Attribution and Licensing
 
