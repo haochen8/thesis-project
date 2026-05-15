@@ -87,10 +87,13 @@ social-media-style text/UI overlays.
 
 ## Dataset Manifests
 
-Dataset manifests live in `preprocessing/dataset_json/`. The main project datasets are:
+Dataset manifests live in `preprocessing/dataset_json/`. The code keeps short local
+manifest names, but the source datasets are:
 
-- `Dataset-1`
-- `NVIDIA-dataset`
+- `Dataset-1`: Kaggle
+  [Human Faces Dataset](https://www.kaggle.com/datasets/kaustubhdhote/human-faces-dataset)
+- `NVIDIA-dataset`: Kaggle
+  [140k Real and Fake Faces](https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces)
 
 The staged benchmark runner maps stages to manifest names:
 
@@ -100,6 +103,28 @@ The staged benchmark runner maps stages to manifest names:
 
 Raw video/image datasets are not redistributed in this repository. Follow the terms of
 the original dataset providers before downloading, preprocessing, or sharing data.
+
+## Results Runs
+
+This project currently documents two related result runs:
+
+1. **First run: this repository.** The local thesis run evaluates `MesoNet`,
+   `MesoInception`, and `Xception` on the project manifests for `Dataset-1`
+   and `NVIDIA-dataset`. It uses Gaussian blur, JPEG compression, noise, and text overlay
+   distortions generated through the local `distortionPipeline` integration. The main
+   artifacts are in `training/results/final_full_thesis_matrix_top3`.
+2. **Second run: standalone distortion pipeline repository.** The follow-up run is from
+   [`litmas/distortionPipeline`](https://github.com/litmas/distortionPipeline/tree/main).
+   It evaluates `UCF`, `SPSL`, and `F3Net` on Celeb-DF-v1 screening data plus full
+   FaceForensics++ and DFDCP test sets, using Snapchat-, Instagram-, and TikTok-style
+   social-media distortions. Its results package is published under
+   [`results/`](https://github.com/litmas/distortionPipeline/tree/main/results) in that
+   repository.
+
+The two runs should be read side by side rather than merged into one leaderboard because
+they use different datasets, detectors, and distortion families. A combined interpretation
+is available in
+[training/results/combined_results_summary.md](training/results/combined_results_summary.md).
 
 ## Running Detector Selection
 
